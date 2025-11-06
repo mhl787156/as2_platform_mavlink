@@ -80,7 +80,7 @@ def get_node(context, *args, **kwargs) -> list:
             namespace=ns,
             output=LaunchConfiguration('log_output'),
             parameters=[config_yaml,
-                        pluginlists_yaml,
+                        # pluginlists_yaml, # Disabled as you cannot overwrite the allowlists from config file otherwise
                         LaunchConfigurationFromConfigFile(
                             'mavros_config_file',
                             default_file=get_mavros_config_file())
